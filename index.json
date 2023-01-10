@@ -3,237 +3,237 @@
         "hokkaido": {
             "name": "北海道",
             "area": "tohoku",
-            "path": "/data/tohoku/hokkaido"
+            "path": "/data/tohoku/hokkaido.json"
         },
         "aomori": {
             "name": "青森県",
             "area": "tohoku",
-            "path": "/data/tohoku/aomori"
+            "path": "/data/tohoku/aomori.json"
         },
         "iwate": {
             "name": "岩手県",
             "area": "tohoku",
-            "path": "/data/tohoku/iwate"
+            "path": "/data/tohoku/iwate.json"
         },
         "miyagi": {
             "name": "宮城県",
             "area": "tohoku",
-            "path": "/data/tohoku/miyagi"
+            "path": "/data/tohoku/miyagi.json"
         },
         "akita": {
             "name": "秋田県",
             "area": "tohoku",
-            "path": "/data/tohoku/akita"
+            "path": "/data/tohoku/akita.json"
         },
         "yamagata": {
             "name": "山形県",
             "area": "tohoku",
-            "path": "/data/tohoku/yamagata"
+            "path": "/data/tohoku/yamagata.json"
         },
         "hukushima": {
             "name": "福島県",
             "area": "tohoku",
-            "path": "/data/tohoku/hukushima"
+            "path": "/data/tohoku/hukushima.json"
         },
         "ibaraki": {
             "name": "茨城県",
             "area": "kanto",
-            "path": "/data/kanto/ibaraki"
+            "path": "/data/kanto/ibaraki.json"
         },
         "tochigi": {
             "name": "栃木県",
             "area": "kanto",
-            "path": "/data/kanto/tochigi"
+            "path": "/data/kanto/tochigi.json"
         },
         "gunma": {
             "name": "群馬県",
             "area": "kanto",
-            "path": "/data/kanto/gunma"
+            "path": "/data/kanto/gunma.json"
         },
         "saitama": {
             "name": "埼玉県",
             "area": "kanto",
-            "path": "/data/kanto/saitama"
+            "path": "/data/kanto/saitama.json"
         },
         "chiba": {
             "name": "千葉県",
             "area": "kanto",
-            "path": "/data/kanto/chiba"
+            "path": "/data/kanto/chiba.json"
         },
         "tokyo": {
             "name": "東京都",
             "area": "kanto",
-            "path": "/data/kanto/tokyo"
+            "path": "/data/kanto/tokyo.json"
         },
         "kanagawa": {
             "name": "神奈川県",
             "area": "kanto",
-            "path": "/data/kanto/kanagawa"
+            "path": "/data/kanto/kanagawa.json"
         },
         "nigata": {
             "name": "新潟県",
             "area": "koushinetsu",
-            "path": "/data/koushinetsu/nigata"
+            "path": "/data/koushinetsu/nigata.json"
         },
         "yamanashi": {
             "name": "山梨県",
             "area": "koushinetsu",
-            "path": "/data/koushinetsu/yamanashi"
+            "path": "/data/koushinetsu/yamanashi.json"
         },
         "nagano": {
             "name": "長野県",
             "area": "koushinetsu",
-            "path": "/data/koushinetsu/nagano"
+            "path": "/data/koushinetsu/nagano.json"
         },
         "toyama": {
             "name": "富山県",
             "area": "hokuriku",
-            "path": "/data/hokuriku/toyama"
+            "path": "/data/hokuriku/toyama.json"
         },
         "ishikawa": {
             "name": "石川県",
             "area": "hokuriku",
-            "path": "/data/hokuriku/ishikawa"
+            "path": "/data/hokuriku/ishikawa.json"
         },
         "fukui": {
             "name": "福井県",
             "area": "hokuriku",
-            "path": "/data/hokuriku/fukui"
+            "path": "/data/hokuriku/fukui.json"
         },
         "gifu": {
             "name": "岐阜県",
             "area": "tokai",
-            "path": "/data/tokai/gifu"
+            "path": "/data/tokai/gifu.json"
         },
         "shizuoka": {
             "name": "静岡県",
             "area": "tokai",
-            "path": "/data/tokai/shizuoka"
+            "path": "/data/tokai/shizuoka.json"
         },
         "aichi": {
             "name": "愛知県",
             "area": "tokai",
-            "path": "/data/tokai/aichi"
+            "path": "/data/tokai/aichi.json"
         },
         "mie": {
             "name": "三重県",
             "area": "tokai",
-            "path": "/data/tokai/mie"
+            "path": "/data/tokai/mie.json"
         },
         "shiga": {
             "name": "滋賀県",
             "area": "kinki",
-            "path": "/data/kinki/shiga"
+            "path": "/data/kinki/shiga.json"
         },
         "kyoto": {
             "name": "滋賀県",
             "area": "kinki",
-            "path": "/data/kinki/kyoto"
+            "path": "/data/kinki/kyoto.json"
         },
         "osaka": {
             "name": "大阪府",
             "area": "kinki",
-            "path": "/data/kinki/osaka"
+            "path": "/data/kinki/osaka.json"
         },
         "hyogo": {
             "name": "兵庫県",
             "area": "kinki",
-            "path": "/data/kinki/hyogo"
+            "path": "/data/kinki/hyogo.json"
         },
         "nara": {
             "name": "奈良県",
             "area": "kinki",
-            "path": "/data/kinki/nara"
+            "path": "/data/kinki/nara.json"
         },
         "wakayama": {
             "name": "和歌山県",
             "area": "kinki",
-            "path": "/data/kinki/wakayama"
+            "path": "/data/kinki/wakayama.json"
         },
         "tottori": {
             "name": "鳥取県",
             "area": "chugoku",
-            "path": "/data/chugoku/tottori"
+            "path": "/data/chugoku/tottori.json"
         },
         "shimane": {
             "name": "島根県",
             "area": "chugoku",
-            "path": "/data/chugoku/shimane"
+            "path": "/data/chugoku/shimane.json"
         },
         "okayama": {
             "name": "岡山県",
             "area": "chugoku",
-            "path": "/data/chugoku/okayama"
+            "path": "/data/chugoku/okayama.json"
         },
         "hiroshima": {
             "name": "広島県",
             "area": "chugoku",
-            "path": "/data/chugoku/hiroshima"
+            "path": "/data/chugoku/hiroshima.json"
         },
         "yamaguchi": {
             "name": "山口県",
             "area": "chugoku",
-            "path": "/data/chugoku/yamaguchi"
+            "path": "/data/chugoku/yamaguchi.json"
         },
         "tokushima": {
             "name": "徳島県",
             "area": "shikoku",
-            "path": "/data/shikoku/tokushima"
+            "path": "/data/shikoku/tokushima.json"
         },
         "kagawa": {
             "name": "香川県",
             "area": "shikoku",
-            "path": "/data/shikoku/kagawa"
+            "path": "/data/shikoku/kagawa.json"
         },
         "ehime": {
             "name": "愛媛県",
             "area": "shikoku",
-            "path": "/data/shikoku/ehime"
+            "path": "/data/shikoku/ehime.json"
         },
         "kouchi": {
             "name": "高知県",
             "area": "shikoku",
-            "path": "/data/shikoku/kouchi"
+            "path": "/data/shikoku/kouchi.json"
         },
         "fukuoka": {
             "name": "福岡県",
             "area": "kyusyu",
-            "path": "/data/kyusyu/fukuoka"
+            "path": "/data/kyusyu/fukuoka.json"
         },
         "saga": {
             "name": "佐賀県",
             "area": "kyusyu",
-            "path": "/data/kyusyu/saga"
+            "path": "/data/kyusyu/saga.json"
         },
         "nagasaki": {
             "name": "長崎県",
             "area": "kyusyu",
-            "path": "/data/kyusyu/nagasaki"
+            "path": "/data/kyusyu/nagasaki.json"
         },
         "kumamoto": {
             "name": "熊本県",
             "area": "kyusyu",
-            "path": "/data/kyusyu/kumamoto"
+            "path": "/data/kyusyu/kumamoto.json"
         },
         "oita": {
             "name": "大分県",
             "area": "kyusyu",
-            "path": "/data/kyusyu/oita"
+            "path": "/data/kyusyu/oita.json"
         },
         "miyazaki": {
             "name": "宮崎県",
             "area": "kyusyu",
-            "path": "/data/kyusyu/miyazaki"
+            "path": "/data/kyusyu/miyazaki.json"
         },
         "kagoshima": {
             "name": "鹿児島県",
             "area": "kyusyu",
-            "path": "/data/kyusyu/kagoshima"
+            "path": "/data/kyusyu/kagoshima.json"
         },
         "okinawa": {
             "name": "宮崎県",
             "area": "kyusyu",
-            "path": "/data/kyusyu/okinawa"
+            "path": "/data/kyusyu/okinawa.json"
         }
     }
 }
