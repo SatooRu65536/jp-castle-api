@@ -1,0 +1,31 @@
+[
+    {
+        "name": "名古屋城",
+        "latlng": [
+            35.18551,
+            136.89923
+        ],
+        "area": "尾張",
+        "prefectur": "愛知県",
+        "city": "名古屋市",
+        "address": "愛知県名古屋市中区本丸1",
+        "remains": [
+            "moat",
+            "koguchi",
+            "kuruwa",
+            "fence",
+            "well",
+            "gate",
+            "turret",
+            "stone_wall",
+            "castle_tower",
+            "earthworks"
+        ],
+        "terrain_type": "flatland",
+        "category": [
+            "100_fine_castles",
+            "best3_castles"
+        ],
+        "site": "https://www.nagoyajo.city.nagoya.jp"
+    }
+]
