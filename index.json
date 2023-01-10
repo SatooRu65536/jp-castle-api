@@ -30,7 +30,7 @@
             "region": "tohoku",
             "path": "/data/tohoku/yamagata.json"
         },
-        "hukushima": {
+        "fukushima": {
             "name": "福島県",
             "region": "tohoku",
             "path": "/data/tohoku/hukushima.json"
@@ -126,7 +126,7 @@
             "path": "/data/kinki/shiga.json"
         },
         "kyoto": {
-            "name": "滋賀県",
+            "name": "京都府",
             "region": "kinki",
             "path": "/data/kinki/kyoto.json"
         },
@@ -231,7 +231,7 @@
             "path": "/data/kyusyu/kagoshima.json"
         },
         "okinawa": {
-            "name": "宮崎県",
+            "name": "沖縄県",
             "region": "kyusyu",
             "path": "/data/kyusyu/okinawa.json"
         }
