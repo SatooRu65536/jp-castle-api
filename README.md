@@ -10,6 +10,14 @@
 ```json
 {
     "name": "名古屋城",
+    "alias": ["金鯱城", "金城", "柳城", "亀屋城", "蓬左城"],
+    "build": 1619,
+    "owners ": ["尾張徳川家"],
+    "castle_tower": {
+        "structure": [5, 5],
+        "condition": "復元",
+    },
+    "scale": 5,
     "latlng": [
         35.18551,
         136.89923
@@ -19,58 +27,126 @@
     "city": "名古屋市",
     "address": "愛知県名古屋市中区本丸1",
     "remains": [
-        "moat",
-        "koguchi",
-        "kuruwa",
-        "fence",
-        "well",
-        "gate",
-        "turret",
-        "stone_wall",
-        "castle_tower",
-        "earthworks"
+        "堀",
+        "竪堀",
+        "堀切",
+        "土塁"
+        "石垣",
+        "曲輪",
+        "虎口",
+        "柵",
+        "塀",
+        "井戸",
+        "門",
+        "櫓",
+        "天守閣",
+        "庭園"
     ],
-    "terrain_type": "flatland",
+    "type": "平城",
     "category": [
-        "100_fine_castles",
-        "best3_castles"
+        "重要文化財",
+        "特別史跡",
+        "百名城",
+        "三大名城"
     ],
     "site": "https://www.nagoyajo.city.nagoya.jp"
 }
 ```
 
-## 遺構
-- 堀 : moat
-- 竪堀 : vertical_moat
-- 堀切 : horikiri
-- 虎口 : koguchi
-- 曲輪・郭 : kuruwa
-- 塀 : fence
-- 井戸 : well
-- 門 : gate
-- 櫓 : turret
-- 石垣 : stone_wall
-- 天守閣 : castle_tower
-- 土塁 : earthworks
+## 項目
+### name
+城名
 
-## 城の地形分類
-- 山城 : mountain
-- 平山城 : flatland_mountain
-- 平城 : flatland
-- 海城 : sea
-- 湖城 : lake
+### alias
+別名
 
-## カテゴリー
-- 世界遺産 : world_heritage
-- 国宝 : national_treasure
-- 現存天守 : existing_castle_tower
-- 百名城 : 100_fine_castles
-- 続百名城 : continued_100_fine_castles
-- 三大名城 : best3_castles
-- 三大山城 : best3_mountain_castles
-- 三大海城 : best3_sea_castles
-- 三大湖城 : best3_lake_castles
+### build
+築城年
 
+### owners
+主な城主
+
+### castle_tower
+#### structure
+天守の構造
+
+#### condition
+天守の状態
+- 現存
+- 復元
+- 復興
+- 模擬
+
+### scale
+城の規模
+- 5 : 外堀の内側は整備されている
+- 4 : 本丸周りは残っている
+- 3 : 一部の建物や堀・石垣はある
+- 2 : 看板のみある
+- 1 : 何も無い
+- 0 : 位置も曖昧
+
+### latlng
+座標 [緯度, 経度]
+
+### area
+地域
+
+### prefectur
+都道府県
+
+### city
+市区町村
+
+### address
+住所
+
+### remains
+- 堀
+- 竪堀
+- 堀切
+- 土塁
+- 石垣
+- 虎口
+- 曲輪(郭)
+- 柵
+- 塀
+- 井戸
+- 門
+- 櫓
+- 天守閣
+- 庭園
+
+### type
+- 山城
+- 平山城
+- 平城
+- 海城
+- 湖城
+
+### category
+- 世界遺産
+- 国宝
+- 重要文化財
+- 都指定史跡
+- 道指定史跡
+- 府指定史跡
+- 県指定史跡
+- 市指定史跡
+- 区指定史跡
+- 町指定史跡
+- 村指定史跡
+- 現存天守
+- 百名城
+- 続百名城
+- 三大名城
+- 三大山城
+- 三大海城
+- 三大湖城
+- 特別史跡
+
+### site
+公式サイト
 
 ## AUTHOR
 - [SatooRu](https://satooru.me)
