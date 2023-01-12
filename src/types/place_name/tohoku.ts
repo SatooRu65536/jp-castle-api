@@ -518,7 +518,7 @@ const Fukushima = {
   selectCity: (city: FukushimaCityName) => city,
 };
 
-export const Tohoku = {
+export {
   HokkaidoDouou,
   HokkaidoDouhoku,
   HokkaidoDoutou,
@@ -530,4 +530,3 @@ export const Tohoku = {
   Yamagata,
   Fukushima,
 };
-export type Tohoku = valueOf<typeof Tohoku>;
