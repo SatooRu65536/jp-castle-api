@@ -24,7 +24,7 @@
     ],
     "place": {
       "area": "尾張",
-      "prefectur": "愛知県",
+      "prefecture": "愛知県",
       "city": "名古屋市",
       "address": "愛知県名古屋市中区本丸1"
     },
@@ -91,7 +91,7 @@
 ### latlng
 座標 [緯度, 経度]
 
-### prefectur
+### prefecture
 都道府県
 
 ### area
