@@ -12,7 +12,7 @@
     "name": "名古屋城",
     "alias": ["金鯱城", "金城", "柳城", "亀屋城", "蓬左城"],
     "build": 1619,
-    "owners ": ["尾張徳川家"],
+    "owners": ["尾張徳川家"],
     "castle_tower": {
         "structure": [5, 5],
         "condition": "復元",
@@ -22,10 +22,12 @@
         35.18551,
         136.89923
     ],
-    "area": "尾張",
-    "prefectur": "愛知県",
-    "city": "名古屋市",
-    "address": "愛知県名古屋市中区本丸1",
+    "place": {
+      "area": "尾張",
+      "prefectur": "愛知県",
+      "city": "名古屋市",
+      "address": "愛知県名古屋市中区本丸1"
+    },
     "remains": [
         "堀",
         "竪堀",
@@ -68,7 +70,7 @@
 
 ### castle_tower
 #### structure
-天守の構造
+天守の構造 [層(重), 階]
 
 #### condition
 天守の状態
@@ -89,11 +91,11 @@
 ### latlng
 座標 [緯度, 経度]
 
-### area
-地域
-
 ### prefectur
 都道府県
+
+### area
+地域
 
 ### city
 市区町村
