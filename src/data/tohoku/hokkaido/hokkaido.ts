@@ -1,4 +1,4 @@
-import { Castle } from "../../types/types";
+import { Castle } from "../../../types/types";
 
 export const HokkaidoCastles: Castle[] = [
   {
@@ -9,7 +9,7 @@ export const HokkaidoCastles: Castle[] = [
     type: "面崖式",
     owners: [],
     place: {
-      prefectur: "北海道",
+      prefecture: "北海道",
       area: "道東",
       city: "根室市",
     },
@@ -28,7 +28,7 @@ export const HokkaidoCastles: Castle[] = [
     scale: 5,
     latlng: [41.79696, 140.75714],
     place: {
-      prefectur: "北海道",
+      prefecture: "北海道",
       area: "道南",
       city: "函館市"
     },

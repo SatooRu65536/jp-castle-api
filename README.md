@@ -16,7 +16,7 @@
     "type": "面崖式",
     "owners": [],
     "place": {
-      "prefectur": "北海道",
+      "prefecture": "北海道",
       "area": "道東",
       "city": "根室市",
     },
