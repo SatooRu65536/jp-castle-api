@@ -1,18 +1,22 @@
-import { Castle, Castles, Prefs } from "../types/types";
+import { Castle } from "../types/types";
 
 const HokkaidoCastles: Castle[] = [
-  new Castles(Prefs.HokkaidoDoutou).getCastle({
-    city: Prefs.HokkaidoDoutou.selectCity("根室市"),
-    name: "名古屋城",
+  {
+    name: "ヲンネモトチャシ跡",
+    alias: ["根室チャシ跡群"],
+    owners: [],
+    build: null,
+    place: {
+      prefectur: "北海道",
+      area: "道東",
+      city: "根室市",
+    },
     scale: 5,
     latlng: [43.38848, 145.78197],
-    castle_tower: {
-      condition: null,
-      structure: [0, 0],
-    },
+    castle_tower: null,
     type: "海城",
     remains: ["堀"],
-    categories: ["百名城", "国指定史跡"],
+    categories: ["国指定史跡", "百名城"],
     site: "https://www.nemuro-kankou.com/tourism/ainuchashi/",
-  }),
+  },
 ];

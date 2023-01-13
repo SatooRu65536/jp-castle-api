@@ -1,15 +1,4 @@
-import {
-  HokkaidoDouou,
-  HokkaidoDouhoku,
-  HokkaidoDoutou,
-  HokkaidoDounan,
-  Aomori,
-  Iwate,
-  Miyagi,
-  Akita,
-  Yamagata,
-  Fukushima,
-} from "./place_name/tohoku";
+import { Tohoku } from "./place_name/tohoku";
 
 export type valueOf<T> = T[keyof T];
 
@@ -18,23 +7,11 @@ export type PrefDataType = {
   area: string | null;
 };
 
-export const Prefs = {
-  HokkaidoDouou,
-  HokkaidoDouhoku,
-  HokkaidoDoutou,
-  HokkaidoDounan,
-  Aomori,
-  Iwate,
-  Miyagi,
-  Akita,
-  Yamagata,
-  Fukushima,
-};
-export type Prefs = valueOf<typeof Prefs>;
+export type Place = Tohoku;
 
 type CastleTower = {
   structure: [number, number];
-  condition: "現存" | "復元" | "復興" | "模擬" | null;
+  condition: "現存" | "復元" | "復興" | "模擬";
 };
 
 type CastleType = "山城" | "平山城" | "平城" | "海城" | "湖城";
@@ -80,70 +57,17 @@ type CastleCategory =
 export type Castle = {
   name: string;
   alias: string[];
-  build: number;
+  build: number | null;
   owners: string[];
   scale: 5 | 4 | 3 | 2 | 1 | 0;
   latlng: [number, number];
-  place: {
-    prefecture: string;
-    area: string | null;
-    city: string;
-    address: string;
-  };
-  castle_tower: CastleTower;
+  place: Place;
+  castle_tower: CastleTower | null;
   type: CastleType;
   remains: CastleRemain[];
   categories: CastleCategory[];
   site: string;
 };
-
-type GetCastle = {
-  name: string;
-  city: ReturnType<Prefs["selectCity"]>;
-  scale: 5 | 4 | 3 | 2 | 1 | 0;
-  latlng: [number, number];
-  castle_tower: CastleTower;
-  type: CastleType;
-  remains: CastleRemain[];
-  categories: CastleCategory[];
-  site: string;
-};
-
-export class Castles {
-  constructor(private pref: PrefDataType) {}
-
-  public getCastle({
-    name,
-    city,
-    scale,
-    latlng,
-    castle_tower,
-    type,
-    remains,
-    categories,
-    site,
-  }: GetCastle): Castle {
-    return {
-      name,
-      place: {
-        prefecture: this.pref.prefecture,
-        area: this.pref.area,
-        city: city,
-        address: "",
-      },
-      alias: [],
-      build: 0,
-      owners: [],
-      scale,
-      latlng,
-      castle_tower,
-      type,
-      remains,
-      categories,
-      site,
-    };
-  }
-}
 
 export type Prefectures = {
   [index: string]: {
