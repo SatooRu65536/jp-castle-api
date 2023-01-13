@@ -9,49 +9,23 @@
 ## サンプルデータ
 ```json
 {
-    "name": "名古屋城",
-    "alias": ["金鯱城", "金城", "柳城", "亀屋城", "蓬左城"],
-    "build": 1619,
-    "owners": ["尾張徳川家"],
-    "castle_tower": {
-        "structure": [5, 5],
-        "condition": "復元",
-    },
+    "name": "ヲンネモトチャシ",
+    "alias": ["根室チャシ跡群"],
+    "build": null,
     "scale": 5,
-    "latlng": [
-        35.18551,
-        136.89923
-    ],
+    "type": "面崖式",
+    "owners": [],
     "place": {
-      "area": "尾張",
-      "prefecture": "愛知県",
-      "city": "名古屋市",
-      "address": "愛知県名古屋市中区本丸1"
+      "prefectur": "北海道",
+      "area": "道東",
+      "city": "根室市",
     },
-    "remains": [
-        "堀",
-        "竪堀",
-        "堀切",
-        "土塁"
-        "石垣",
-        "曲輪",
-        "虎口",
-        "柵",
-        "塀",
-        "井戸",
-        "門",
-        "櫓",
-        "天守閣",
-        "庭園"
-    ],
-    "type": "平城",
-    "category": [
-        "重要文化財",
-        "特別史跡",
-        "百名城",
-        "三大名城"
-    ],
-    "site": "https://www.nagoyajo.city.nagoya.jp"
+    "latlng": [43.38848, 145.78197],
+    "castle_tower": null,
+    "remains": ["堀", "曲輪"],
+    "restorations": [],
+    "categories": ["国指定史跡", "百名城"],
+    "site": "https://www.nemuro-kankou.com/tourism/ainuchashi/",
 }
 ```
 
@@ -65,8 +39,40 @@
 ### build
 築城年
 
+### scale
+城の規模
+- 5 : 外堀の内側は整備されている
+- 4 : 本丸周りは残っている
+- 3 : 一部の建物や堀・石垣はある
+- 2 : 看板のみある
+- 1 : 何も無い
+- 0 : 位置も曖昧
+
+### type
+- 山城
+- 平山城
+- 平城
+- 海城
+- 湖城
+
 ### owners
 主な城主
+
+### place
+#### prefecture
+都道府県
+
+#### area
+地域
+
+#### city
+市区町村
+
+#### address
+住所
+
+### latlng
+座標 [緯度, 経度]
 
 ### castle_tower
 #### structure
@@ -79,31 +85,8 @@
 - 復興
 - 模擬
 
-### scale
-城の規模
-- 5 : 外堀の内側は整備されている
-- 4 : 本丸周りは残っている
-- 3 : 一部の建物や堀・石垣はある
-- 2 : 看板のみある
-- 1 : 何も無い
-- 0 : 位置も曖昧
-
-### latlng
-座標 [緯度, 経度]
-
-### prefecture
-都道府県
-
-### area
-地域
-
-### city
-市区町村
-
-### address
-住所
-
-### remains
+### remains, restorations
+現存, 復元した構造物
 - 堀
 - 竪堀
 - 堀切
@@ -118,13 +101,6 @@
 - 櫓
 - 天守閣
 - 庭園
-
-### type
-- 山城
-- 平山城
-- 平城
-- 海城
-- 湖城
 
 ### category
 - 世界遺産
