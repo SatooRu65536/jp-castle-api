@@ -5,7 +5,7 @@ export const HokkaidoCastles: Castle[] = [
     name: "ヲンネモトチャシ",
     alias: ["根室チャシ跡群"],
     build: null,
-    scale: 5,
+    scale: 3,
     type: "面崖式",
     owners: [],
     place: {
@@ -37,6 +37,6 @@ export const HokkaidoCastles: Castle[] = [
     remains: ["堀", "土塁", "曲輪", "虎口"],
     restorations: ["奉行所"],
     categories: [],
-    site: "todo",
+    site: "https://www.hakodate-jts-kosya.jp/park/goryokaku/",
   },
 ];

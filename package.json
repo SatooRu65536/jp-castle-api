@@ -7,7 +7,9 @@
   "author": "SatooRu65536",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/ts-node ./src/index.ts",
+    "start": "./node_modules/.bin/ts-node ./src/index.ts --gen-data",
+    "set-db": "./node_modules/.bin/ts-node ./src/index.ts --set-db",
+    "gen-by-latlng": "./node_modules/.bin/ts-node ./src/index.ts --gen-by-latlng",
     "areas": "./node_modules/.bin/ts-node ./src/gen_placetype.ts"
   },
   "devDependencies": {
@@ -19,6 +21,6 @@
   },
   "dependencies": {
     "glob": "^8.0.3",
-    "lodash": "^4.17.21"
+    "sqlite3": "^5.1.4"
   }
 }

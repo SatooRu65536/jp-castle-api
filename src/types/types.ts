@@ -1,3 +1,4 @@
+import { AreaType, PrefType } from "./areas";
 import { Tohoku } from "./place_name/tohoku";
 
 export type valueOf<T> = T[keyof T];

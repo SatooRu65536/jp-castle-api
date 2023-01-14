@@ -1,3 +1,3 @@
 export default {
-  export_dir: "data",
+  export_dir: "data"
 };
