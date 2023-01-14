@@ -41,7 +41,7 @@ const genArea = (
       .replace(/\["/g, '[\n  "')
       .replace(/",/g, '",\n  ')
       .replace(/"]/g, '",\n]') +
-    " as const;\nexport type AreaType = typeof Prefs[number];\n\n";
+    " as const;\nexport type AreaType = typeof Areas[number];\n\n";
 
   const Regions =
     "export const Regions = " +

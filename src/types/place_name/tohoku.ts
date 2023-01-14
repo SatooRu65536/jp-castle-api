@@ -1,5 +1,5 @@
 // 北海道 道央
-const DououCities = [
+export const DououCities = [
   "札幌市",
   "札幌市中央区",
   "札幌市北区",
@@ -88,7 +88,7 @@ interface Doou {
 }
 
 // 北海道 道北
-const DouhookuCities = [
+export const DouhookuCities = [
   "旭川市",
   "留萌市",
   "稚内市",
@@ -138,7 +138,7 @@ interface Dohoku {
 }
 
 // 北海道 道東
-const DoutouCities = [
+export const DoutouCities = [
   "釧路市",
   "帯広市",
   "北見市",
@@ -198,7 +198,7 @@ interface Dotou {
 }
 
 // 北海道 道南
-const DounanCities = [
+export const DounanCities = [
   "函館市",
   "北斗市",
   "松前町",
@@ -227,7 +227,7 @@ interface Donan {
 type Hokkaido = Doou | Dohoku | Dotou | Donan;
 
 // 青森県
-const AomoriCities = [
+export const AomoriCities = [
   "青森市",
   "弘前市",
   "八戸市",
@@ -276,7 +276,7 @@ type Aomori = {
 };
 
 // 岩手県
-const IwateCites = [
+export const IwateCites = [
   "盛岡市",
   "宮古市",
   "大船渡市",
@@ -318,7 +318,7 @@ type Iwate = {
 };
 
 // 宮城県
-const MiyagiCites = [
+export const MiyagiCites = [
   "仙台市",
   "石巻市",
   "塩竈市",
@@ -362,7 +362,7 @@ type Miyagi = {
 };
 
 // 秋田県
-const AkitaCites = [
+export const AkitaCites = [
   "秋田市",
   "能代市",
   "横手市",
@@ -396,7 +396,7 @@ type Akita = {
 };
 
 // 山形県
-const YamagataCities = [
+export const YamagataCities = [
   "山形市",
   "米沢市",
   "鶴岡市",
@@ -441,7 +441,7 @@ type Yamagata = {
 };
 
 // 福島県
-const FukushimaCities = [
+export const FukushimaCities = [
   "福島市",
   "会津若松市",
   "郡山市",

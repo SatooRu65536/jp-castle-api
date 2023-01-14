@@ -1,5 +1,10 @@
-import { HiroshimaCastles } from "./data/chugoku/hiroshima/hiroshima";
-import { OkayamaCastles } from "./data/chugoku/okayama/okayama";
+import { AkiCastles } from "./data/chugoku/hiroshima/aki";
+import { BingoCastles } from "./data/chugoku/hiroshima/bingo";
+import { BinhokuCastles } from "./data/chugoku/hiroshima/binhoku";
+import { GeihokuCastles } from "./data/chugoku/hiroshima/geihoku";
+import { BiccyuCastles } from "./data/chugoku/okayama/biccyu";
+import { BizenCastles } from "./data/chugoku/okayama/bizen";
+import { MisakuCastles } from "./data/chugoku/okayama/misaku";
 import { ShimaneCastles } from "./data/chugoku/shimane/shimane";
 import { TottoriCastles } from "./data/chugoku/tottori/tottori";
 import { YamaguchiCastles } from "./data/chugoku/yamaguchi/yamaguchi";
@@ -13,16 +18,26 @@ import { KanagawaCastles } from "./data/kanto/kanagawa/kanagawa";
 import { SaitamaCastles } from "./data/kanto/saitama/saitama";
 import { TochigiCastles } from "./data/kanto/tochigi/tochigi";
 import { TokyoCastles } from "./data/kanto/tokyo/tokyo";
-import { HyogoCastles } from "./data/kinki/hyogo/hyogo";
+import { AwajiCastles } from "./data/kinki/hyogo/awaji";
+import { HanshinCastles } from "./data/kinki/hyogo/hanshin";
+import { HarimaCastles } from "./data/kinki/hyogo/harima";
+import { TajimaCastles } from "./data/kinki/hyogo/tajima";
+import { TanbaCastles } from "./data/kinki/hyogo/tanba";
 import { KyotoCastles } from "./data/kinki/kyoto/kyoto";
 import { NaraCastles } from "./data/kinki/nara/nara";
 import { OsakaCastles } from "./data/kinki/osaka/osaka";
 import { ShigaCastles } from "./data/kinki/shiga/shiga";
 import { WakayamaCastles } from "./data/kinki/wakayama/wakayama";
-import { NaganoCastles } from "./data/koushinnetsu/nagano/nagano";
-import { NigataCastles } from "./data/koushinnetsu/nigata/nigata";
-import { YamanashiCastles } from "./data/koushinnetsu/yamanashi/yamanashi";
+import { NaganoChushinCastles } from "./data/koushinetsu/nagano/chushin";
+import { NaganoHokushinCastles } from "./data/koushinetsu/nagano/hokushin";
+import { NaganoNanshinCastles } from "./data/koushinetsu/nagano/nanshin";
+import { NaganoToushinCastles } from "./data/koushinetsu/nagano/toushin";
+import { NigataCastles } from "./data/koushinetsu/nigata/nigata";
+import { YamanashiCastles } from "./data/koushinetsu/yamanashi/yamanashi";
+import { ChikugoCastles } from "./data/kyusyu/fukuoka/chikugo";
+import { ChikuhouCastles } from "./data/kyusyu/fukuoka/chikuhou";
 import { FukuokaCastles } from "./data/kyusyu/fukuoka/fukuoka";
+import { KitakyusyuCastles } from "./data/kyusyu/fukuoka/kitakyusyu";
 import { KagoshimaCastles } from "./data/kyusyu/kagoshima/kagoshima";
 import { KumamotoCastles } from "./data/kyusyu/kumamoto/kumamoto";
 import { MiyazakiCastles } from "./data/kyusyu/miyazaki/miyazaki";
@@ -41,7 +56,9 @@ import { HokkaidoCastles } from "./data/tohoku/hokkaido/hokkaido";
 import { IwateCastles } from "./data/tohoku/iwate/iwate";
 import { MiyagiCastles } from "./data/tohoku/miyagi/miyagi";
 import { YamagataCastles } from "./data/tohoku/yamagata/yamagata";
-import { AichiCastles } from "./data/tokai/aichi/aichi";
+import { HigashimikawaCastles } from "./data/tokai/aichi/higashimikawa";
+import { NishimikawaCastles } from "./data/tokai/aichi/nishimikawa";
+import { OwariCastles } from "./data/tokai/aichi/owari";
 import { GifuCastles } from "./data/tokai/gifu/gifu";
 import { MieCastles } from "./data/tokai/mie/mie";
 import { JPCastlesType } from "./types/areas";
@@ -93,7 +110,10 @@ export const JPCastles: JPCastlesType = {
     nigata: NigataCastles,
   },
   nagano: {
-    nagano: NaganoCastles,
+    chushin: NaganoChushinCastles,
+    hokushin: NaganoHokushinCastles,
+    nanshin: NaganoNanshinCastles,
+    toushin: NaganoToushinCastles,
   },
   yamanashi: {
     yamanashi: YamanashiCastles,
@@ -114,7 +134,9 @@ export const JPCastles: JPCastlesType = {
     gifu: GifuCastles,
   },
   aichi: {
-    aichi: AichiCastles,
+    owari: OwariCastles,
+    nishimikawa: NishimikawaCastles,
+    higashimikawa: HigashimikawaCastles,
   },
   mie: {
     mie: MieCastles,
@@ -129,7 +151,11 @@ export const JPCastles: JPCastlesType = {
     osaka: OsakaCastles,
   },
   hyogo: {
-    hyogo: HyogoCastles,
+    hanshin: HanshinCastles,
+    tanba: TanbaCastles,
+    tajima: TajimaCastles,
+    awaji: AwajiCastles,
+    harima: HarimaCastles,
   },
   nara: {
     nara: NaraCastles,
@@ -144,10 +170,15 @@ export const JPCastles: JPCastlesType = {
     shimane: ShimaneCastles,
   },
   okayama: {
-    okayama: OkayamaCastles,
+    biccyu: BiccyuCastles,
+    bizen: BizenCastles,
+    misaku: MisakuCastles,
   },
   hiroshima: {
-    hiroshima: HiroshimaCastles,
+    bingo: BingoCastles,
+    binhoku: BinhokuCastles,
+    aki: AkiCastles,
+    geihoku: GeihokuCastles,
   },
   yamaguchi: {
     yamaguchi: YamaguchiCastles,
@@ -165,7 +196,10 @@ export const JPCastles: JPCastlesType = {
     kouchi: KouchiCastles,
   },
   fukuoka: {
+    kitakyusyu: KitakyusyuCastles,
+    chikuhou: ChikuhouCastles,
     fukuoka: FukuokaCastles,
+    chikugo: ChikugoCastles,
   },
   saga: {
     saga: SagaCastles,

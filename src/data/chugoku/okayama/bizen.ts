@@ -1,3 +1,3 @@
 import { Castle } from "../../../types/types";
 
-export const HiroshimaCastles: Castle[] = [];
+export const BizenCastles: Castle[] = [];

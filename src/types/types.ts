@@ -1,5 +1,12 @@
-import { AreaType, PrefType } from "./areas";
+import { Chugoku } from "./place_name/chugoku";
+import { Hokuriku } from "./place_name/hokuriku";
+import { Kanto } from "./place_name/kanto";
+import { Kinki } from "./place_name/kinki";
+import { Koushinetsu } from "./place_name/koushinetsu";
+import { Kyusyu } from "./place_name/kyusyu";
+import { Shikoku } from "./place_name/shikoku";
 import { Tohoku } from "./place_name/tohoku";
+import { Tokai } from "./place_name/tokai";
 
 export type valueOf<T> = T[keyof T];
 
@@ -7,9 +14,9 @@ export type PrefDataType = {
   prefecture: string;
   area: string | null;
 };
-
+p
 // 地名
-type Place = Tohoku;
+type Place = Tohoku | Kanto | Koushinetsu | Hokuriku | Tokai | Kinki | Chugoku | Shikoku | Kyusyu;
 
 // 天守の状況
 const CastleTowerConditions = ["現存", "復元", "復興", "模擬"] as const;
