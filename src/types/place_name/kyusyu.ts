@@ -11,7 +11,13 @@ export const FukuokaKitakyusyuCities = [
   "芦屋町",
   "遠賀町",
   "中間市",
-  "北九州市",
+  "北九州市門司区",
+  "北九州市若松区",
+  "北九州市戸畑区",
+  "北九州市小倉北区",
+  "北九州市小倉南区",
+  "北九州市八幡東区",
+  "北九州市八幡西区",
 ] as const;
 interface FukuokaKitakyusyu {
   prefecture: "福岡県";
@@ -66,7 +72,13 @@ interface FukuokaChikugo {
 
 // 福岡県 福岡
 export const FukuokaFukuokaCities = [
-  "福岡市",
+  "福岡市東区",
+  "福岡市博多区",
+  "福岡市中央区",
+  "福岡市南区",
+  "福岡市西区",
+  "福岡市城南区",
+  "福岡市早良区",
   "筑紫野市",
   "春日市",
   "大野城市",
@@ -155,7 +167,11 @@ interface Nagasaki {
 
 // 熊本県
 export const KumamotoCities = [
-  "熊本市",
+  "熊本市中央区",
+  "熊本市東区",
+  "熊本市西区",
+  "熊本市南区",
+  "熊本市北区",
   "八代市",
   "人吉市",
   "荒尾市",
