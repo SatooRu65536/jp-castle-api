@@ -2,30 +2,34 @@
 日本の城をJSON形式でまとめてます。目標は1000城!!  
 助っ人求む `情報提供` `プルリク` `Issues` 是非お願いします  
 
-- [情報提供 Form](https://forms.gle/rXdaRjGiUroPJVLx9)
+- [JP-CastleAPI app](https://github.com/SatooRu65536/castle-api-app/releases)
+- [JP-CastleAPI app(ブラウザ版)](https://castle-api-app.vercel.app/)
 - [GitHub](https://github.com/SatooRu65536/jp-castle-api)
-
 
 ## サンプルデータ
 ```json
 {
-    "name": "ヲンネモトチャシ",
-    "alias": ["根室チャシ跡群"],
-    "build": null,
-    "scale": 5,
-    "type": "面崖式",
-    "place": {
-      "prefecture": "北海道",
-      "area": "道東",
-      "city": "根室市",
-    },
-    "latlng": [43.38848, 145.78197],
-    "castle_tower": null,
-    "remains": ["堀", "曲輪"],
-    "restorations": [],
-    "categories": ["国指定史跡", "百名城"],
-    "site": "https://www.nemuro-kankou.com/tourism/ainuchashi/",
-}
+"  name": "名古屋城",
+  "alias": ["金鯱城", "金城", "柳城", "亀屋城", "蓬左城"],
+  "build": 1619,
+  "castle_tower": {
+    "structure": [5, 5],
+    "condition": "復元",
+  },
+  "scale": 5,
+  "type": "平城",
+  "latlng": [35.18551, 136.89923],
+  "place": {
+    "prefecture": "愛知県",
+    "area": "尾張",
+    "city": "名古屋市中区",
+    "address": "愛知県名古屋市中区本丸1-1",
+  },
+  "remains": ["堀", "土塁", "石垣", "曲輪", "虎口", "井戸", "櫓", "庭園"],
+  "restorations": ["天守閣", "門", "塀"],
+  "categories": ["重要文化財", "特別史跡", "百名城", "三大名城"],
+  "site": "https://www.nagoyajo.city.nagoya.jp",
+},
 ```
 
 ## 項目
