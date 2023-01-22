@@ -24,6 +24,7 @@ interface Shiga {
   prefecture: "滋賀県";
   area: "滋賀";
   city: typeof ShigaCities[number];
+  address: string;
 }
 
 // 京都府
@@ -69,6 +70,7 @@ interface Kyoto {
   prefecture: "京都府";
   area: "京都";
   city: typeof KyotoCities[number];
+  address: string;
 }
 
 // 大阪府
@@ -150,6 +152,7 @@ interface Osaka {
   prefecture: "大阪府";
   area: "大阪";
   city: typeof OsakaCities[number];
+  address: string;
 }
 
 // 兵庫県 淡路
@@ -158,6 +161,7 @@ interface HyogoAwaji {
   prefecture: "兵庫県";
   area: "淡路";
   city: typeof HyogoAwajiCities[number];
+  address: string;
 }
 
 // 兵庫県 丹波
@@ -166,6 +170,7 @@ interface HyogoTanba {
   prefecture: "兵庫県";
   area: "丹波";
   city: typeof HyogoTanbaCities[number];
+  address: string;
 }
 
 // 兵庫県 但馬
@@ -186,6 +191,7 @@ interface HyogoTajima {
   prefecture: "兵庫県";
   area: "但馬";
   city: typeof HyogoTajimaCities[number];
+  address: string;
 }
 
 // 兵庫県 阪神
@@ -212,6 +218,7 @@ interface HyogoHanshin {
   prefecture: "兵庫県";
   area: "阪神";
   city: typeof HyogoHanshinCities[number];
+  address: string;
 }
 
 // 兵庫県 播磨
@@ -237,6 +244,7 @@ interface HyogoHarima {
   prefecture: "兵庫県";
   area: "播磨";
   city: typeof HyogoHarimaCities[number];
+  address: string;
 }
 
 type Hyogo = HyogoAwaji | HyogoTanba | HyogoHarima | HyogoHanshin;
@@ -287,6 +295,7 @@ interface Nara {
   prefecture: "奈良県";
   area: "奈良";
   city: typeof NaraCities[number];
+  address: string;
 }
 
 // 和歌山県
@@ -326,6 +335,7 @@ interface Wakayama {
   prefecture: "和歌山県";
   area: "和歌山";
   city: typeof WakayamaCities[number];
+  address: string;
 }
 
 export type Kinki = Shiga | Kyoto | Osaka | Hyogo | Nara | Wakayama;

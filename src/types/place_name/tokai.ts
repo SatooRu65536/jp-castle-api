@@ -48,6 +48,7 @@ interface Shizuoka {
   prefecture: "静岡県";
   area: "静岡";
   city: typeof ShizuokaCities[number];
+  address: string;
 }
 
 // 岐阜県
@@ -99,6 +100,7 @@ interface Gifu {
   prefecture: "岐阜県";
   area: "岐阜";
   city: typeof GifuCities[number];
+  address: string;
 }
 
 // 愛知県 東三河
@@ -115,6 +117,7 @@ interface AichiHigashimikawa {
   prefecture: "愛知県";
   area: "東三河";
   city: typeof AichiHigashimikawaCities[number];
+  address: string;
 }
 
 // 愛知県 西三河
@@ -135,6 +138,7 @@ interface AichiNishimikawa {
   prefecture: "愛知県";
   area: "西三河";
   city: typeof AichiNishimikawaCities[number];
+  address: string;
 }
 
 // 愛知県 尾張
@@ -195,6 +199,7 @@ interface AichiOwari {
   prefecture: "愛知県";
   area: "尾張";
   city: typeof AichiOwariCities[number];
+  address: string;
 }
 
 // 三重県
@@ -233,6 +238,7 @@ interface Mie {
   prefecture: "三重県";
   area: "三重";
   city: typeof MieCities[number];
+  address: string;
 }
 
 type Aichi = AichiHigashimikawa | AichiNishimikawa | AichiOwari;

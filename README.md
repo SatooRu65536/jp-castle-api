@@ -14,7 +14,6 @@
     "build": null,
     "scale": 5,
     "type": "面崖式",
-    "owners": [],
     "place": {
       "prefecture": "北海道",
       "area": "道東",
@@ -54,9 +53,6 @@
 - 平城
 - 海城
 - 湖城
-
-### owners
-主な城主
 
 ### place
 #### prefecture

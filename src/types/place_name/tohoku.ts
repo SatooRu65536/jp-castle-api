@@ -1,5 +1,5 @@
 // 北海道 道央
-export const DououCities = [
+export const HokkaidoDououCities = [
   "札幌市",
   "札幌市中央区",
   "札幌市北区",
@@ -81,14 +81,15 @@ export const DououCities = [
   "えりも町",
   "新ひだか町",
 ] as const;
-interface Doou {
+interface HokkaidoDoou {
   prefecture: "北海道";
   area: "道央";
-  city: typeof DououCities[number];
+  city: typeof HokkaidoDououCities[number];
+  address: string;
 }
 
 // 北海道 道北
-export const DouhookuCities = [
+export const HokkaidoDouhookuCities = [
   "旭川市",
   "留萌市",
   "稚内市",
@@ -131,14 +132,15 @@ export const DouhookuCities = [
   "利尻富士町",
   "幌延町",
 ] as const;
-interface Dohoku {
+interface HokkaidoDohoku {
   prefecture: "北海道";
   area: "道東";
-  city: typeof DouhookuCities[number];
+  city: typeof HokkaidoDouhookuCities[number];
+  address: string;
 }
 
 // 北海道 道東
-export const DoutouCities = [
+export const HokkaidoDoutouCities = [
   "釧路市",
   "帯広市",
   "北見市",
@@ -191,14 +193,15 @@ export const DoutouCities = [
   "標津町",
   "羅臼町",
 ] as const;
-interface Dotou {
+interface HokkaidoDotou {
   prefecture: "北海道";
   area: "道東";
-  city: typeof DoutouCities[number];
+  city: typeof HokkaidoDoutouCities[number];
+  address: string;
 }
 
 // 北海道 道南
-export const DounanCities = [
+export const HokkaidoDounanCities = [
   "函館市",
   "北斗市",
   "松前町",
@@ -218,13 +221,14 @@ export const DounanCities = [
   "今金町",
   "せたな町",
 ] as const;
-interface Donan {
+interface HokkaidoDonan {
   prefecture: "北海道";
   area: "道南";
-  city: typeof DounanCities[number];
+  city: typeof HokkaidoDounanCities[number];
+  address: string;
 }
 
-type Hokkaido = Doou | Dohoku | Dotou | Donan;
+type Hokkaido = HokkaidoDoou | HokkaidoDohoku | HokkaidoDotou | HokkaidoDonan;
 
 // 青森県
 export const AomoriCities = [
@@ -273,6 +277,7 @@ type Aomori = {
   prefecture: "青森県";
   area: "青森";
   city: typeof AomoriCities[number];
+  address: string;
 };
 
 // 岩手県
@@ -315,6 +320,7 @@ type Iwate = {
   prefecture: "岩手県";
   area: "岩手";
   city: typeof IwateCites[number];
+  address: string;
 };
 
 // 宮城県
@@ -363,6 +369,7 @@ type Miyagi = {
   prefecture: "宮城県";
   area: "宮城";
   city: typeof MiyagiCites[number];
+  address: string;
 };
 
 // 秋田県
@@ -397,6 +404,7 @@ type Akita = {
   prefecture: "宮城県";
   area: "宮城";
   city: typeof AkitaCites[number];
+  address: string;
 };
 
 // 山形県
@@ -442,6 +450,7 @@ type Yamagata = {
   prefecture: "山形県";
   area: "山形";
   city: typeof YamagataCities[number];
+  address: string;
 };
 
 // 福島県
@@ -509,6 +518,7 @@ type Fukushima = {
   prefecture: "山形県";
   area: "山形";
   city: typeof FukushimaCities[number];
+  address: string;
 };
 
 export type Tohoku =

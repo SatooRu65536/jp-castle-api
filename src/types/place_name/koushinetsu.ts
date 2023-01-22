@@ -42,6 +42,7 @@ interface Nigata {
   prefecture: "新潟県";
   area: "新潟";
   city: typeof NigataCities[number];
+  address: string;
 }
 
 // 長野県 北信
@@ -66,6 +67,7 @@ interface NaganoHokushin {
   prefecture: "長野県";
   area: "北信";
   city: typeof NaganoHokushinCities[number];
+  address: string;
 }
 
 // 長野県 東信
@@ -90,6 +92,7 @@ interface NaganoToushin {
   prefecture: "長野県";
   area: "東信";
   city: typeof NaganoToushinCities[number];
+  address: string;
 }
 
 // 長野県 中信
@@ -118,6 +121,7 @@ interface NaganoChushin {
   prefecture: "長野県";
   area: "中信";
   city: typeof NaganoChushinCities[number];
+  address: string;
 }
 
 // 長野県 南信
@@ -155,6 +159,7 @@ interface NaganoNanshin {
   prefecture: "長野県";
   area: "南信";
   city: typeof NaganoNanshinCities[number];
+  address: string;
 }
 
 // 山梨県
@@ -191,6 +196,7 @@ interface Yamanashi {
   prefecture: "山梨県";
   area: "山梨";
   city: typeof YamanashiCities[number];
+  address: string;
 }
 
 type Nagano = NaganoHokushin | NaganoToushin | NaganoChushin | NaganoNanshin;

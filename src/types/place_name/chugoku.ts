@@ -24,6 +24,7 @@ interface Tottori {
   prefecture: "鳥取県";
   area: "鳥取";
   city: typeof TottoriCities[number];
+  address: string;
 }
 
 // 島根県
@@ -52,6 +53,7 @@ interface Shimane {
   prefecture: "島根県";
   area: "島根";
   city: typeof ShimaneCities[number];
+  address: string;
 }
 
 // 岡山県 備前
@@ -71,6 +73,7 @@ interface OkayamaBizen {
   prefecture: "岡山県";
   area: "備前";
   city: typeof OkayamaBizenCities[number];
+  address: string;
 }
 
 // 岡山県 備中
@@ -91,6 +94,7 @@ interface OkayamaBicchu {
   prefecture: "岡山県";
   area: "岡山";
   city: typeof OkayamaBicchuCities[number];
+  address: string;
 }
 
 // 岡山県 美作
@@ -109,6 +113,7 @@ interface OkayamaMisaku {
   prefecture: "岡山県";
   area: "岡山";
   city: typeof OkayamaMisakuCities[number];
+  address: string;
 }
 
 type Okayama = OkayamaBizen | OkayamaBicchu | OkayamaMisaku;
@@ -126,6 +131,7 @@ interface HiroshimaBingo {
   prefecture: "広島県";
   area: "備後";
   city: typeof HiroshimaBingoCities[number];
+  address: string;
 }
 
 // 広島県 備北
@@ -134,6 +140,7 @@ interface HiroshimaBihoku {
   prefecture: "広島県";
   area: "備北";
   city: typeof HiroshimaBihokuCities[number];
+  address: string;
 }
 
 // 広島県 安芸
@@ -162,6 +169,7 @@ interface HiroshimaAki {
   prefecture: "広島県";
   area: "安芸";
   city: typeof HiroshimaAkiCities[number];
+  address: string;
 }
 
 // 広島県 芸北
@@ -174,6 +182,7 @@ interface HiroshimaGeihoku {
   prefecture: "広島県";
   area: "芸北";
   city: typeof HiroshimaGeihokuCities[number];
+  address: string;
 }
 
 type Hiroshima =
@@ -208,6 +217,7 @@ interface Yamaguchi {
   prefecture: "山口県";
   area: "山口";
   city: typeof YamaguchiCities[number];
+  address: string;
 }
 
 export type Chugoku = Tottori | Shimane | Okayama | Hiroshima | Yamaguchi;

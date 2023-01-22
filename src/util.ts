@@ -52,7 +52,10 @@ import { TokushimaCastles } from "./data/shikoku/tokushima/tokushima";
 import { AkitaCastles } from "./data/tohoku/akita/akita";
 import { AomoriCastles } from "./data/tohoku/aomori/aomori";
 import { FukushimaCastles } from "./data/tohoku/fukushima/fukushima";
-import { HokkaidoCastles } from "./data/tohoku/hokkaido/hokkaido";
+import { HokkaidoDouhokuCastles } from "./data/tohoku/hokkaido/douhoku";
+import { HokkaidoDounanCastles } from "./data/tohoku/hokkaido/dounan";
+import { HokkaidoDououCastles } from "./data/tohoku/hokkaido/douou";
+import { HokkaidoDoutouCastles } from "./data/tohoku/hokkaido/doutou";
 import { IwateCastles } from "./data/tohoku/iwate/iwate";
 import { MiyagiCastles } from "./data/tohoku/miyagi/miyagi";
 import { YamagataCastles } from "./data/tohoku/yamagata/yamagata";
@@ -65,7 +68,10 @@ import { JPCastlesType } from "./types/areas";
 
 export const JPCastles: JPCastlesType = {
   hokkaido: {
-    hokkaido: HokkaidoCastles,
+    douhoku: HokkaidoDouhokuCastles,
+    doutou: HokkaidoDoutouCastles,
+    dounan: HokkaidoDounanCastles,
+    douou: HokkaidoDououCastles,
   },
   aomori: {
     aomori: AomoriCastles,

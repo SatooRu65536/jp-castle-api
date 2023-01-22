@@ -23,6 +23,7 @@ interface FukuokaKitakyusyu {
   prefecture: "福岡県";
   area: "北九州";
   city: typeof FukuokaKitakyusyuCities[number];
+  address: string;
 }
 
 // 福岡県 筑豊
@@ -47,6 +48,7 @@ interface FukuokaChikuhou {
   prefecture: "福岡県";
   area: "筑豊";
   city: typeof FukuokaChikuhouCities[number];
+  address: string;
 }
 
 // 福岡県 筑後
@@ -68,6 +70,7 @@ interface FukuokaChikugo {
   prefecture: "福岡県";
   area: "筑後";
   city: typeof FukuokaChikugoCities[number];
+  address: string;
 }
 
 // 福岡県 福岡
@@ -104,6 +107,7 @@ interface FukuokaFukuoka {
   prefecture: "福岡県";
   area: "福岡";
   city: typeof FukuokaFukuokaCities[number];
+  address: string;
 }
 
 // 佐賀県
@@ -133,6 +137,7 @@ interface Saga {
   prefecture: "佐賀県";
   area: "佐賀";
   city: typeof SagaCities[number];
+  address: string;
 }
 
 // 長崎県
@@ -163,6 +168,7 @@ interface Nagasaki {
   prefecture: "長崎県";
   area: "長崎";
   city: typeof NagasakiCities[number];
+  address: string;
 }
 
 // 熊本県
@@ -221,6 +227,7 @@ interface Kumamoto {
   prefecture: "熊本県";
   area: "熊本";
   city: typeof KumamotoCities[number];
+  address: string;
 }
 
 // 大分県
@@ -248,6 +255,7 @@ interface Oita {
   prefecture: "大分県";
   area: "大分";
   city: typeof OitaCities[number];
+  address: string;
 }
 
 // 宮崎県
@@ -283,6 +291,7 @@ interface Miyazaki {
   prefecture: "宮崎県";
   area: "宮崎";
   city: typeof MiyazakiCities[number];
+  address: string;
 }
 
 // 鹿児島県
@@ -336,6 +345,7 @@ interface Kagoshima {
   prefecture: "鹿児島県";
   area: "鹿児島";
   city: typeof KagoshimaCities[number];
+  address: string;
 }
 
 // 沖縄県
@@ -386,6 +396,7 @@ interface Okinawa {
   prefecture: "沖縄県";
   area: "沖縄";
   city: typeof OkinawaCities[number];
+  address: string;
 }
 
 type Fukuoka =

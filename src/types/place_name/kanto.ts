@@ -45,11 +45,11 @@ export const IbarakiCities = [
   "境町",
   "利根町",
 ] as const;
-
 interface Ibaraki {
   prefecture: "茨城県";
   area: "茨城";
   city: typeof IbarakiCities[number];
+  address: string;
 }
 
 // 栃木県
@@ -80,11 +80,11 @@ export const TochigiCities = [
   "那須町",
   "那珂川町",
 ] as const;
-
 interface Tochigi {
   prefecture: "栃木県";
   area: "栃木";
   city: typeof TochigiCities[number];
+  address: string;
 }
 
 // 群馬県
@@ -125,11 +125,11 @@ export const GunmaCities = [
   "大泉町",
   "邑楽町",
 ] as const;
-
 interface Gunma {
   prefecture: "群馬県";
   area: "群馬";
   city: typeof GunmaCities[number];
+  address: string;
 }
 
 // 埼玉県
@@ -207,11 +207,11 @@ export const SaitamaCities = [
   "杉戸町",
   "松伏町",
 ] as const;
-
 interface Saitama {
   prefecture: "埼玉県";
   area: "埼玉";
   city: typeof SaitamaCities[number];
+  address: string;
 }
 
 // 東京都
@@ -279,11 +279,11 @@ export const TokyoCities = [
   "青ヶ島村",
   "小笠原村",
 ] as const;
-
 interface Tokyo {
   prefecture: "東京都";
   area: "東京";
   city: typeof TokyoCities[number];
+  address: string;
 }
 
 // 千葉県
@@ -352,6 +352,7 @@ interface Chiba {
   prefecture: "千葉県";
   area: "千葉";
   city: typeof ChibaCities[number];
+  address: string;
 }
 
 // 神奈川県
@@ -415,11 +416,11 @@ export const KanagawaCities = [
   "愛川町",
   "清川村",
 ] as const;
-
 interface Kanagawa {
   prefecture: "神奈川県";
   area: "神奈川";
   city: typeof KanagawaCities[number];
+  address: string;
 }
 
 export type Kanto =

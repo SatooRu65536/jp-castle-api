@@ -14,15 +14,15 @@ export type PrefDataType = {
   prefecture: string;
   area: string | null;
 };
-p
+
 // 地名
 type Place = Tohoku | Kanto | Koushinetsu | Hokuriku | Tokai | Kinki | Chugoku | Shikoku | Kyusyu;
 
 // 天守の状況
-const CastleTowerConditions = ["現存", "復元", "復興", "模擬"] as const;
-type CastleTower = {
+const TowerCondtionConditions = ["現存", "復元", "復興", "模擬", ""] as const;
+export type TowerCondtion = {
   structure: [number, number];
-  condition: typeof CastleTowerConditions[number];
+  condition: typeof TowerCondtionConditions[number];
 };
 
 // 形式
@@ -35,7 +35,7 @@ const CastleTypes = [
   "面崖式",
   "丘先式",
 ] as const;
-type CastleType = typeof CastleTypes[number];
+export type CastleType = typeof CastleTypes[number];
 
 // 構造物
 const CastleStructures = [
@@ -57,7 +57,7 @@ const CastleStructures = [
   "奉行所",
   "庭園",
 ] as const;
-type CastleStructures = typeof CastleStructures[number];
+export type CastleStructures = typeof CastleStructures[number];
 
 // カテゴリー
 const CastleCategories = [
@@ -82,17 +82,16 @@ const CastleCategories = [
   "三大海城",
   "三大湖城",
 ] as const;
-type CastleCategories = typeof CastleCategories[number];
+export type CastleCategories = typeof CastleCategories[number];
 
 export type Castle = {
   name: string;
   alias: string[];
   build: number | null;
-  owners: string[];
   scale: 5 | 4 | 3 | 2 | 1 | 0;
   latlng: [number, number];
   place: Place;
-  castle_tower: CastleTower | null;
+  castle_tower: TowerCondtion | null;
   type: CastleType;
   remains: CastleStructures[];
   restorations: CastleStructures[];

@@ -6,6 +6,15 @@ import Settings from "../export_setting";
 import { JPCastles } from "./util";
 import { AreasFromPref, AreaType, Prefs, PrefType } from "./types/areas";
 import { Castle } from "./types/types";
+import { getDatabase, get, ref, remove } from "@firebase/database";
+import {
+  CastleCategories,
+  CastleStructures,
+  CastleType,
+  TowerCondtion,
+} from "./types/types";
+import { getApp, getApps, initializeApp } from "firebase/app";
+import dotenv from "dotenv";
 
 const dirInit = (dirname: string) => {
   if (fs.existsSync(dirname)) fs.rmSync(dirname, { recursive: true });
@@ -63,13 +72,13 @@ const setCasstlesToDB = (searchDir: string) => {
       name TEXT,
       alias TEXT,
       build INTEGER,
-      owners TEXT,
       scale INTEGER,
       lat REAL,
       lng REAL,
       prefecture TEXT,
       area TEXT,
       city TEXT,
+      address TEXT,
       tower_condition TEXT,
       tower_layer INTEGER,
       tower_floor INTEGER,
@@ -104,13 +113,13 @@ const setCasstlesToDB = (searchDir: string) => {
             name,
             alias,
             build,
-            owners,
             scale,
             lat,
             lng,
             prefecture,
             area,
             city,
+            address,
             tower_condition,
             tower_layer,
             tower_floor,
@@ -123,13 +132,13 @@ const setCasstlesToDB = (searchDir: string) => {
           '${d.name}',
           '${JSON.stringify(d.alias)}',
           ${d.build},
-          '${JSON.stringify(d.owners)}',
           ${d.scale},
           ${d.latlng[0]},
           ${d.latlng[1]},
           '${d.place.prefecture}',
           '${d.place.area}',
           '${d.place.city}',
+          '${d.place.address}'
           '${d.castle_tower ? d.castle_tower.condition : "なし"}',
           '${d.castle_tower ? d.castle_tower.structure[0] : 0}',
           '${d.castle_tower ? d.castle_tower.structure[1] : 0}',
@@ -190,8 +199,8 @@ const addDataByLatlng = (dataDir: string) => {
 
             const file = `${dataDir}/${lat.toFixed(1)}_${lng.toFixed(1)}.json`;
             const sql = `SELECT
-            name, alias, build, owners, scale, 
-            lat, lng, prefecture, area, city,
+            name, alias, build, scale, 
+            lat, lng, prefecture, area, city, address
             tower_condition, tower_layer, tower_floor, type, remains, 
             restorations, categories, site
             FROM castles WHERE
@@ -206,13 +215,13 @@ const addDataByLatlng = (dataDir: string) => {
                   name: row.name,
                   alias: JSON.parse(row.alias),
                   build: row.build,
-                  owners: JSON.parse(row.owners),
                   scale: row.scale,
                   latlng: [row.lat, row.lng],
                   place: {
                     prefecture: row.prefecture,
                     area: row.area,
                     city: row.city,
+                    address: row.address,
                   },
                   castle_tower:
                     row.tower_condition === "なし"
@@ -240,6 +249,117 @@ const addDataByLatlng = (dataDir: string) => {
   });
 };
 
+type CastleData = {
+  name: string;
+  alias: string[];
+  latlng: {
+    lat: string;
+    lng: string;
+  };
+  pref: string;
+  area: string;
+  city: string;
+  address: string;
+  build: string;
+  scale: number;
+  type: CastleType;
+  tower: {
+    isExist: boolean;
+    structure: [number, number];
+    condition: TowerCondtion;
+  };
+  remains: CastleStructures[];
+  restorations: CastleStructures[];
+  categories: CastleCategories[];
+  site: string;
+  reference: string;
+};
+
+type RTDBData = {
+  [index: string]: {
+    [index: string]: {
+      [index: string]: {
+        [index: string]: {
+          [index: string]: {
+            json: string;
+          };
+        };
+      };
+    };
+  };
+};
+
+const getTsCode = (data: CastleData) => {
+  const build = data.build === "" ? "null" : Number(data.build);
+  const tower = data.tower.isExist
+    ? "null"
+    : `{
+      structure: [${data.tower.structure[0]}, ${data.tower.structure[1]}],
+      condition: "復元",
+    }`;
+
+  return `  // ${data.pref} ${data.area} ${data.city}
+  {
+    name: "${data.name}",
+    alias: ${JSON.stringify(data.alias)},
+    build: ${build},
+    scale: ${data.scale},
+    type: "${data.type}",
+    latlng: [${Number(data.latlng.lat)}, ${Number(data.latlng.lng)}],
+    place: {
+      prefecture: "${data.pref}",
+      area: "${data.area}",
+      city: "${data.city}",
+      address: "${data.address}",
+    },
+    castle_tower: ${tower},
+    remains: ${JSON.stringify(data.remains)},
+    restorations: ${JSON.stringify(data.restorations)},
+    categories: ${JSON.stringify(data.categories)},
+    site: "${data.site}",
+  },`;
+};
+
+const genDatumFileFromRTDB = async () => {
+  dotenv.config();
+  const firebaseConfig = {
+    apiKey: process.env.FIREBASE_apiKey,
+    authDomain: process.env.FIREBASE_authDomain,
+    projectId: process.env.FIREBASE_projectId,
+    storageBucket: process.env.FIREBASE_storageBucket,
+    messagingSenderId: process.env.FIREBASE_messagingSenderId,
+    appId: process.env.FIREBASE_appId,
+    measurementId: process.env.FIREBASE_measurementId,
+  };
+  initializeApp(firebaseConfig);
+
+  try {
+    const db = getDatabase();
+    const dbRef = ref(db, "castles");
+    const data: RTDBData = await (await get(dbRef)).val();
+    remove(dbRef);
+
+    const stream = fs.createWriteStream("data/rtdb.ts");
+    stream.write("const data = [\n");
+    Object.values(data).map((prefData) => {
+      Object.values(prefData).map((areaData) => {
+        Object.values(areaData).map((cityData) => {
+          Object.values(cityData).map((castleData) => {
+            Object.values(castleData).map((data) => {
+              const tsCode = getTsCode(JSON.parse(data.json));
+              stream.write(tsCode + "\n");
+            });
+          });
+        });
+      });
+    });
+    stream.write("];");
+    stream.end("\n");
+  } catch (e) {
+    console.error(e);
+  }
+};
+
 const args = process.argv;
 
 if (args.includes("--set-db")) {
@@ -250,4 +370,6 @@ if (args.includes("--set-db")) {
   addDataByLatlng(Settings.export_dir);
 } else if (args.includes("--exportdir-init")) {
   dirInit(Settings.export_dir);
+} else if (args.includes("--get-from-rtdb")) {
+  genDatumFileFromRTDB();
 }

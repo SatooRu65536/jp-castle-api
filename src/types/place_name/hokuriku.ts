@@ -20,6 +20,7 @@ interface Toyama {
   prefecture: "富山県";
   area: "富山";
   city: typeof ToyamaCities[number];
+  address: string;
 }
 
 // 石川県
@@ -48,6 +49,7 @@ interface Ishikawa {
   prefecture: "石川県";
   area: "石川";
   city: typeof IshikawaCities[number];
+  address: string;
 }
 
 // 福井県
@@ -74,6 +76,7 @@ interface Fukui {
   prefecture: "福井県";
   area: "福井";
   city: typeof FukuiCities[number];
+  address: string;
 }
 
 export type Hokuriku = Toyama | Ishikawa | Fukui;

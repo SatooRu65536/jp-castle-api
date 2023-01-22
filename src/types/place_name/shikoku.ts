@@ -29,6 +29,7 @@ interface Tokushima {
   prefecture: "徳島県";
   area: "徳島";
   city: typeof TokushimaCities[number];
+  address: string;
 }
 
 // 香川県
@@ -55,6 +56,7 @@ interface Kagawa {
   prefecture: "香川県";
   area: "香川";
   city: typeof KagawaCities[number];
+  address: string;
 }
 
 // 愛媛県
@@ -84,6 +86,7 @@ interface Ehime {
   prefecture: "愛媛県";
   area: "愛媛";
   city: typeof EhimeCities[number];
+  address: string;
 }
 
 // 高知県
@@ -127,6 +130,7 @@ interface Koushi {
   prefecture: "高知県";
   area: "高知";
   city: typeof KoushiCities[number];
+  address: string;
 }
 
 export type Shikoku = Tokushima | Kagawa | Ehime | Koushi;
