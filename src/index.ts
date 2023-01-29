@@ -97,13 +97,11 @@ const setCasstlesToDB = (searchDir: string) => {
 
         if (!Prefs.includes(pref))
           throw new Error(
-            `フォルダ名が間違っています。  '${pref}' 'src/data/${pathArr[2]}/${pathArr[3]}'\n` +
-              " > npm run areas\n"
+            `フォルダ名が間違っています。  '${pref}' 'src/data/${pathArr[2]}/${pathArr[3]}'\n`
           );
-        if (!(area in AreasFromPref))
+        if (!AreasFromPref[pref].includes(area))
           throw new Error(
-            `フォルダ名が間違っています。 '${area}' 'src/data/${pathArr[2]}/${pathArr[3]}/${pathArr[4]}'\n` +
-              " > npm run areas"
+            `フォルダ名が間違っています。 '${area}' 'src/data/${pathArr[2]}/${pathArr[3]}/${pathArr[4]}'\n`
           );
 
         const data = JPCastles[pref][area];
@@ -138,7 +136,7 @@ const setCasstlesToDB = (searchDir: string) => {
           '${d.place.prefecture}',
           '${d.place.area}',
           '${d.place.city}',
-          '${d.place.address}'
+          '${d.place.address}',
           '${d.castle_tower ? d.castle_tower.condition : "なし"}',
           '${d.castle_tower ? d.castle_tower.structure[0] : 0}',
           '${d.castle_tower ? d.castle_tower.structure[1] : 0}',
@@ -194,11 +192,19 @@ const addDataByLatlng = (dataDir: string) => {
 
         for (let lat = llRange.min.lat; lat <= llRange.max.lat; lat += 0.2) {
           lat = Math.round(lat * 10) / 10;
-          for (let lng = llRange.min.lng; lng <= llRange.max.lng; lng += 0.2) {
-            lng = Math.round(lng * 10) / 10;
+          fs.mkdir(`data/latlng/${lat.toFixed(1)}`, (err) => {
+            if (err) throw err;
+            for (
+              let lng = llRange.min.lng;
+              lng <= llRange.max.lng;
+              lng += 0.2
+            ) {
+              lng = Math.round(lng * 10) / 10;
 
-            const file = `${dataDir}/${lat.toFixed(1)}_${lng.toFixed(1)}.json`;
-            const sql = `SELECT
+              const file = `${dataDir}/${lat.toFixed(1)}/${lng.toFixed(
+                1
+              )}.json`;
+              const sql = `SELECT
             name, alias, build, scale, 
             lat, lng, prefecture, area, city, address
             tower_condition, tower_layer, tower_floor, type, remains, 
@@ -206,43 +212,44 @@ const addDataByLatlng = (dataDir: string) => {
             FROM castles WHERE
             ${lat} <= lat AND lat < ${lat}+0.2 AND
             ${lng} <= lng AND lng < ${lng}+0.2`;
-            db.all(sql, (err, rows) => {
-              if (err) throw err;
-              if (rows.length === 0) return;
-
-              const data: Castle[] = rows.map((row) => {
-                return {
-                  name: row.name,
-                  alias: JSON.parse(row.alias),
-                  build: row.build,
-                  scale: row.scale,
-                  latlng: [row.lat, row.lng],
-                  place: {
-                    prefecture: row.prefecture,
-                    area: row.area,
-                    city: row.city,
-                    address: row.address,
-                  },
-                  castle_tower:
-                    row.tower_condition === "なし"
-                      ? null
-                      : {
-                          condition: row.tower_condition,
-                          structure: [row.tower_layer, row.floor],
-                        },
-                  type: row.type,
-                  remains: JSON.parse(row.remains),
-                  restorations: JSON.parse(row.restorations),
-                  categories: JSON.parse(row.categories),
-                  site: row.site,
-                };
-              });
-              console.log(file);
-              fs.writeFile(file, JSON.stringify(data), (err) => {
+              db.all(sql, (err, rows) => {
                 if (err) throw err;
+                if (rows.length === 0) return;
+
+                const data: Castle[] = rows.map((row) => {
+                  return {
+                    name: row.name,
+                    alias: JSON.parse(row.alias),
+                    build: row.build,
+                    scale: row.scale,
+                    latlng: [row.lat, row.lng],
+                    place: {
+                      prefecture: row.prefecture,
+                      area: row.area,
+                      city: row.city,
+                      address: row.address,
+                    },
+                    castle_tower:
+                      row.tower_condition === "なし"
+                        ? null
+                        : {
+                            condition: row.tower_condition,
+                            structure: [row.tower_layer, row.floor],
+                          },
+                    type: row.type,
+                    remains: JSON.parse(row.remains),
+                    restorations: JSON.parse(row.restorations),
+                    categories: JSON.parse(row.categories),
+                    site: row.site,
+                  };
+                });
+                console.log(file);
+                fs.writeFile(file, JSON.stringify(data), (err) => {
+                  if (err) throw err;
+                });
               });
-            });
-          }
+            }
+          });
         }
       }
     );
