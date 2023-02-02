@@ -21,7 +21,7 @@ const dirInit = (dirname: string) => {
   fs.mkdirSync(dirname);
 };
 
-const addDataByPref = (searchDir: string, dataDir: string) => {
+const genDataTsfile = (searchDir: string, dataDir: string) => {
   if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
 
   glob(path.join(searchDir, "/**/*"), { nodir: true }, (err, files) => {
@@ -47,7 +47,7 @@ const addDataByPref = (searchDir: string, dataDir: string) => {
           `フォルダ名が間違っています。  '${pref}' 'src/data/${pathArr[1]}/${pathArr[2]}'\n` +
             " > npm run areas\n"
         );
-      if (!(area in AreasFromPref))
+      if (!AreasFromPref[pref].includes(area))
         throw new Error(
           `フォルダ名が間違っています。 '${area}' 'src/data/${pathArr[1]}/${pathArr[2]}/${pathArr[3]}'\n` +
             " > npm run areas"
@@ -153,7 +153,7 @@ const setCasstlesToDB = (searchDir: string) => {
   });
 };
 
-const addDataByLatlng = (dataDir: string) => {
+const genDataByLatlng = (dataDir: string) => {
   if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
   dataDir = path.join(dataDir, "latlng");
   if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir);
@@ -305,7 +305,9 @@ const getTsCode = (data: CastleData) => {
       condition: "復元",
     }`;
 
-  return `  // ${data.pref} ${data.area} ${data.city}
+  return `  // ${data.pref} ${data.area} ${data.city}${
+    data.reference ? "\n  // " + data.reference : ""
+  }
   {
     name: "${data.name}",
     alias: ${JSON.stringify(data.alias)},
@@ -365,16 +367,18 @@ const genDatumFileFromRTDB = async () => {
   } catch (e) {
     console.error(e);
   }
+
+  process.exit()
 };
 
 const args = process.argv;
 
 if (args.includes("--set-db")) {
   setCasstlesToDB("src/data");
-} else if (args.includes("--gen-data")) {
-  addDataByPref("src/data", Settings.export_dir);
+} else if (args.includes("--gen-by-tsfile")) {
+  genDataTsfile("src/data", Settings.export_dir);
 } else if (args.includes("--gen-by-latlng")) {
-  addDataByLatlng(Settings.export_dir);
+  genDataByLatlng(Settings.export_dir);
 } else if (args.includes("--exportdir-init")) {
   dirInit(Settings.export_dir);
 } else if (args.includes("--get-from-rtdb")) {

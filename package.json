@@ -7,7 +7,8 @@
   "author": "SatooRu65536",
   "license": "MIT",
   "scripts": {
-    "start": "./node_modules/.bin/ts-node ./src/index.ts --gen-data",
+    "gen-by-tsfile": "./node_modules/.bin/ts-node ./src/index.ts --gen-by-tsfile",
+    "gen-by-pref": "./node_modules/.bin/ts-node ./src/index.ts --gen-by-pref",
     "set-db": "./node_modules/.bin/ts-node ./src/index.ts --set-db",
     "gen-by-latlng": "./node_modules/.bin/ts-node ./src/index.ts --gen-by-latlng",
     "get-from-rtdb": "./node_modules/.bin/ts-node ./src/index.ts --get-from-rtdb",

@@ -16,10 +16,26 @@ export type PrefDataType = {
 };
 
 // 地名
-type Place = Tohoku | Kanto | Koushinetsu | Hokuriku | Tokai | Kinki | Chugoku | Shikoku | Kyusyu;
+type Place =
+  | Tohoku
+  | Kanto
+  | Koushinetsu
+  | Hokuriku
+  | Tokai
+  | Kinki
+  | Chugoku
+  | Shikoku
+  | Kyusyu;
 
 // 天守の状況
-const TowerCondtionConditions = ["現存", "復元", "復興", "模擬", ""] as const;
+const TowerCondtionConditions = [
+  "現存",
+  "復元",
+  "復興",
+  "模擬",
+  "非現存",
+  "",
+] as const;
 export type TowerCondtion = {
   structure: [number, number];
   condition: typeof TowerCondtionConditions[number];
@@ -56,6 +72,9 @@ const CastleStructures = [
   "蔵",
   "奉行所",
   "庭園",
+  "主殿",
+  "馬屋",
+  "工房",
 ] as const;
 export type CastleStructures = typeof CastleStructures[number];
 
